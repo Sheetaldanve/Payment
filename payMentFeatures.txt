@@ -1,0 +1,241 @@
+Test Cases for save(Customer C)
+
+For Creating new Customer Account
+
+Negative Scenarios
+
+1.Given we are creating new customer account
+when C is null
+then it should return "Customer is null"
+
+
+2.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile=null And C.wallet=w
+then it should return "Mobile No is null"
+
+3.Given we are creating new customer account
+when C.name=null And C.mobile="7784936547" And C.wallet=w
+then it should return "Name is null"
+
+4.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="7388901723" And C.wallet=null
+then it should return "wallet is null"
+
+5.Given we are creating new customer account
+when C.name="Sheetal#$1" And C.mobile="7388901723" And C.wallet=null
+then it should return "Name is not Valid"
+
+6.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="738890172389" And C.wallet=null
+then it should return "Mobile no is not valid"
+
+7.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="738890172389" And C.wallet(balance)=-500
+then it should return "Balance is not valid"
+
+
+Positive Scenarios
+
+1.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="7388787890" And C.wallet=wallet1
+then it should add Customerdetails to database and return CustomerDetails
+
+For Updating Customer Account
+
+Negative Scenarios
+
+1.Given we are updating customer account
+when C is null
+then it should return "Customer is null"
+
+
+2.Given we are updating customer account
+when C.name="Sheetal" And C.mobile=null And C.wallet=w
+then it should return "Mobile No is null"
+
+3.Given we are updating customer account
+when C.name=null And C.mobile="7784936547" And C.wallet=w
+then it should return "Name is null"
+
+4.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="7388901723" And C.wallet=null
+then it should return "wallet is null"
+
+5.Given we are updating customer account
+when C.name="Sheetal#$1" And C.mobile="7388901723" And C.wallet=null
+then it should return "Name is not Valid"
+
+6.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="738890172389" And C.wallet=null
+then it should return "Mobile no is not valid"
+
+7.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="7388901722" And C.wallet=null
+then it should return "Mobile no not associated with this account"
+
+
+Positive Scenarios
+
+1.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="7388787890" And C.wallet=wallet1
+then it should update Customerdetails to database and return CustomerDetails
+
+Test Cases for  method findByMobile(String MobileNum)
+
+Negative Scenarios
+
+1.Given we are finding account by MobileNumber
+when mobileNum is "99602499"
+then it should return "Not valid mobile no"
+
+2.Given we are finding account by MobileNumber
+when mobileNum is "abc"
+then it should return "Not valid mobile no"
+
+3.Given we are finding account by MobileNumber
+when mobileNum is null
+then it should return "Mobile no is null"
+
+4.Given we are finding account by MobileNumber
+when mobileNum is "a~"
+then it should return "Not valid mobile no"
+
+5.Given we are finding account by MobileNumber
+when mobileNum is "788990006677777"
+then it should return "Not valid mobile no"
+
+6.Given we are finding account by MobileNumber
+when mobileNum is "7654839789"
+then it should return "Not registered account with this mobile Number"
+
+
+
+Positive Scenarios
+
+7.Given we are finding account by MobileNumber
+when mobileNum is "7654839789"
+then it should return CustomerDetails
+
+
+
+Service Layer
+
+Test Cases for addCustomer(Customer C)
+
+For Creating new Customer Account
+
+Negative Scenarios
+
+1.Given we are creating new customer account
+when C is null
+then it should return "Customer is null"
+
+
+2.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile=null And C.wallet=w
+then it should return "Mobile No is null"
+
+3.Given we are creating new customer account
+when C.name=null And C.mobile="7784936547" And C.wallet=w
+then it should return "Name is null"
+
+4.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="7388901723" And C.wallet=null
+then it should return "wallet is null"
+
+5.Given we are creating new customer account
+when C.name="Sheetal#$1" And C.mobile="7388901723" And C.wallet=null
+then it should return "Name is not Valid"
+
+6.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="738890172389" And C.wallet=null
+then it should return "Mobile no is not valid"
+
+7.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="738890172389" And C.wallet(balance)=-500
+then it should return "Balance is not valid"
+
+
+Positive Scenarios
+
+1.Given we are creating new customer account
+when C.name="Sheetal" And C.mobile="7388787890" And C.wallet=wallet1
+then it should add Customerdetails to database and return CustomerDetails
+
+For Updating Customer Account
+
+Negative Scenarios
+
+1.Given we are updating customer account
+when C is null
+then it should return "Customer is null"
+
+
+2.Given we are updating customer account
+when C.name="Sheetal" And C.mobile=null And C.wallet=w
+then it should return "Mobile No is null"
+
+3.Given we are updating customer account
+when C.name=null And C.mobile="7784936547" And C.wallet=w
+then it should return "Name is null"
+
+4.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="7388901723" And C.wallet=null
+then it should return "wallet is null"
+
+5.Given we are updating customer account
+when C.name="Sheetal#$1" And C.mobile="7388901723" And C.wallet=null
+then it should return "Name is not Valid"
+
+6.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="738890172389" And C.wallet=null
+then it should return "Mobile no is not valid"
+
+7.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="7388901722" And C.wallet=null
+then it should return "Mobile no not associated with this account"
+
+
+Positive Scenarios
+
+1.Given we are updating customer account
+when C.name="Sheetal" And C.mobile="7388787890" And C.wallet=wallet1
+then it should update Customerdetails to database and return CustomerDetails
+
+
+
+Test Cases for  method showBalance(String MobileNum)
+
+Negative Scenarios
+
+1.Given we are retrieving balance for account by mobile no
+when mobileNum is "99602499"
+then it should return "Not valid mobile no"
+
+2.Given we are retrieving balance for account by mobile no
+when mobileNum is "abc"
+then it should return "Not valid mobile no"
+
+3.Given we are retrieving balance for account by mobile no
+when mobileNum is null
+then it should return "Mobile no is null"
+
+4.Given we are retrieving balance for account by mobile no
+when mobileNum is "a~"
+then it should return "Not valid mobile no"
+
+5.Given we are retrieving balance for account by mobile no
+when mobileNum is "788990006677777"
+then it should return "Not valid mobile no"
+
+6.Given we are retrieving balance for account by mobile no
+when mobileNum is "7654839789"
+then it should return "Not registered account with this mobile Number"
+
+
+
+Positive Scenarios
+
+7.Given Given we are retrieving balance for account by mobile no
+when mobileNum is "7654839789"
+then it should return CustomerDetails
